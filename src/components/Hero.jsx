@@ -20,7 +20,7 @@ export default function Hero() {
       <div className="hero-overlay" />
 
       <div className="container hero-content">
-        <h1>Auténtico sabor criollo</h1>
+        <h1>Auténtico sabor </h1>
         <p>Menú a la parrilla, ambiente único y reservas directas.</p>
         <NavLink to="/reservar" className="btn">Reservar ahora</NavLink>
       </div>
