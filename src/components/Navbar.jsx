@@ -16,7 +16,7 @@ export default function Navbar() {
           className="nav-toggle"
           aria-label="Abrir menú"
           aria-expanded={open}
-          onClick={() => setOpen(v => !v)}
+          onClick={() => setOpen((v) => !v)}
         >
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
             <path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" strokeWidth="2" />

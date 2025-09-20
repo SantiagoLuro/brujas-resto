@@ -1,15 +1,17 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import MenuModal from "./MenuModal.jsx";
+import { asset } from "../lib/asset";
 
-const IMG = (name) => `/img/menu/${name}`;
+// Helper para imágenes locales dentro de /public/img/menu/*
+const IMG = (name) => asset(`img/menu/${name}`);
 
 const MENU = {
   Entradas: [
     { n: "Provoleta", d: "Queso fundido con hierbas.", p: "$5.500", img: IMG("provoleta.jpg"),
       det: "Provoleta dorada a la plancha con orégano y ají molido.",
       ing: ["Provolone", "Orégano", "Ají molido", "Aceite de oliva"], porcion: "1 unidad", tags: ["Vegetariano"] },
-    { n: "Empanadas criollas", d: "Carne a cuchillo.", p: "$1.500", img: IMG("empanda.jpg"),
+    { n: "Empanadas criollas", d: "Carne a cuchillo.", p: "$1.500", img: IMG("empanada.jpg"),
       det: "Horneadas, masa casera.", ing: ["Carne", "Cebolla", "Huevo", "Aceitunas"], porcion: "1 un." },
     { n: "Chorizo", d: "Con chimichurri casero.", p: "$2.900", img: IMG("chorizo.jpg"),
       det: "Chori 100% cerdo.", ing: ["Chorizo", "Chimichurri"], porcion: "1 un." },
@@ -98,7 +100,7 @@ export default function MenuTabs() {
                 src={i.img}
                 alt={i.n}
                 loading="lazy"
-                onError={(e) => { e.currentTarget.src = "/img/placeholder.jpg"; }}
+                onError={(e) => { e.currentTarget.src = asset("img/placeholder.jpg"); }}
               />
               <div className="card-body">
                 <div className="card-head">

@@ -1,8 +1,9 @@
 import React from "react";
+import { asset } from "../lib/asset";
 
-const COUNT = 12; // cambiá este número si tenés más/menos fotos
+const COUNT = 12; // cambiá si tenés otra cantidad
 const IMGS = Array.from({ length: COUNT }, (_, i) =>
-  `/img/gallery/${String(i + 1).padStart(2, "0")}.jpg`
+  asset(`img/gallery/${String(i + 1).padStart(2, "0")}.jpg`)
 );
 
 export default function Gallery() {
@@ -17,10 +18,7 @@ export default function Gallery() {
               src={src}
               alt={`Foto ${i + 1}`}
               loading="lazy"
-              onError={(e) => {
-                // si alguna falta, la oculto para que no quede un hueco
-                e.currentTarget.style.display = "none";
-              }}
+              onError={(e) => { e.currentTarget.style.display = "none"; }}
             />
           ))}
         </div>
